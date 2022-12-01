@@ -5,9 +5,10 @@ const breakpoints = {
   xs: "320px",
   s: "480px",
   md: "768px",
+  sidebarTrigger: "900px",
   lg: "960px",
   xl: "1200px",
-  xll: "1440px"
+  xxl: "1440px"
 };
 
 const theme = extendTheme({

@@ -28,21 +28,18 @@ const linkSlice = createSlice({
     addFullLink(state, action) {
       state.inputLinks.push(action.payload);
       state.isEmpty = false;
-    },
-    // addShortenedLink(state, action) {
-    //   state.shortenedLinks.push(action.payload);
-    // },
+    }
   },
   extraReducers: {
     [createShortLink.pending]: (state) => {
-      state.loadingStatus = 'loading'
+      state.loadingStatus = 'loading';
     },
     [createShortLink.fulfilled]: (state, action) => {
+      state.loadingStatus = 'resolved';
       state.shortenedLinks.push(action.payload);
-      state.loadingStatus = 'resolved'
     },
     [createShortLink.rejected]: (state, action) => {
-      state.loadingStatus = 'rejected'
+      state.loadingStatus = 'rejected';
       state.errorStatus = action.payload;
     }
   }

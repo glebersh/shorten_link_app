@@ -16,17 +16,34 @@ const LinkCard = ({ id, fullLink, shortenedLink }) => {
   };
 
   return (
-    <Flex w='70%' m='0 auto' mt='2em'>
+    <Flex w={{
+      xs: "90%",
+      xl: "70%",
+    }} m='0 auto' mt='2em' gap='1em'
+      direction={{
+        xs: "column",
+        xl: "row",
+      }}>
       <Text display='inline-block'
         fontSize='1em'
-        w='60%'
+        w={{
+          xs: "100%",
+          xl: "60%",
+        }}
         fontWeight='500'>{fullLink}</Text>
       <Text display='inline-block'
         fontSize='1em' color='teal'
-        w='30%'
+        w={{
+          xs: "100%",
+          xl: "30%",
+        }}
         fontWeight='500'>{shortenedLink}</Text>
       <Button colorScheme='teal' id={id}
         onClick={(e) => copyToClipBoard(e)}>{isCopied ? 'Copied!' : 'Copy link'}</Button>
+      <Box h='1px' backgroundColor='darkgray' border='none' display={{
+        xs: "block",
+        xl: "none",
+      }}></Box>
     </Flex>
   )
 };

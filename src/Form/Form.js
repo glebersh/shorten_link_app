@@ -22,21 +22,40 @@ const LinkForm = () => {
       setTimeout(() => {
         setError(false)
         document.querySelector('#url-input').value = ''
-      },
-        5000);
+      }, 5000);
     }
   };
 
   return (
-    <Box backgroundImage={'images/bg-boost-desktop.svg'} w='70%' m='5em auto 0' padding='50px' borderRadius='10px'>
+    <Box backgroundImage={'images/bg-boost-desktop.svg'} m='5em auto 0' p={{
+      xs: "25px",
+      xl: "50px",
+    }}
+      borderRadius='10px'
+      width={{
+        xs: "90%",
+        lg: "80%",
+      }} gap='2em'>
       <form className='link-form' onSubmit={(e) => sendLink(e, fullLink)}>
         <Input onChange={(e) => setFullLink(e.target.value)} id='url-input' value={fullLink}
-          type='text' display='inline-block' w='75%'
+          type='text' display='inline-block'
+          w={{
+            xs: "100%",
+            xl: "70%",
+          }}
           backgroundColor='white' borderColor={isInvalidURL ? '#FF5511' : 'inherit'}
           placeholder='Shorten a link here...'
           color={isInvalidURL ? '#FF5511' : 'black'} fontWeight='700' />
-        <Input type='submit' display='inline-block' w='15%' backgroundColor='teal'
-          value='Shorten it!' color='white' ml='3em'
+        <Input type='submit' display={{
+          xs: "block",
+          xl: "inline-block",
+        }}
+          minW='150px' maxW='200px' backgroundColor='teal'
+          value='Shorten it!' color='white'
+          m={{
+            xs: "2em auto 0 auto",
+            xl: "0 0 0 2em",
+          }}
           _hover={{ cursor: 'pointer', backgroundColor: 'black' }} />
       </form>
       {isInvalidURL && <Text color='#FF5511' fontSize='1.25em' fontWeight='700'>URL is not valid!</Text>}

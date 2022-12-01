@@ -5,7 +5,7 @@ const MainButton = ({ content, width }) => {
   return (
     <Button borderRadius='15px'
       colorScheme='teal' fontSize='1.25em'
-      display='inline-block' w={width}>{content}</Button>
+      display='inline-block' w={width} m='0 auto'>{content}</Button>
   )
 };
 
