@@ -22,12 +22,10 @@ const linkSlice = createSlice({
     shortenedLinks: [],
     loadingStatus: null,
     errorStatus: null,
-    isEmpty: true,
   },
   reducers: {
     addFullLink(state, action) {
       state.inputLinks.push(action.payload);
-      state.isEmpty = false;
     }
   },
   extraReducers: {

@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Alert, AlertIcon, AlertDescription, AlertTitle, Flex, Spinner } from '@chakra-ui/react';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import LinkCard from '../LinksCard/LinksCard';
@@ -17,11 +17,15 @@ const LinksList = () => {
   });
 
   return (
-    <Box w='100%'>
-      {loadingStatus === 'rejected' && <h1>ERROR</h1>}
-      {loadingStatus === 'loading' && <h1>loading....</h1>}
+    <Flex w='100%' align='center' direction='column'>
+      {loadingStatus === 'rejected' && <Alert status='error'>
+        <AlertIcon />
+        <AlertTitle>Something went wrong...</AlertTitle>
+        <AlertDescription>Check the API response</AlertDescription>
+      </Alert>}
+      {loadingStatus === 'loading' && <Spinner w='150px' h='150px' />}
       {loadingStatus === 'resolved' && linksList}
-    </Box>
+    </Flex>
   )
 };
 
