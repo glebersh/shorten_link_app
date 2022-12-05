@@ -3,8 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Features
-** Shortening actual links
-** Copying result to the clipboard
+* Shortening actual links
+* Copying result to the clipboard
 
 ## Tech Stack & Tools
 * React
